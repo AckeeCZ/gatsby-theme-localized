@@ -1,0 +1,6 @@
+# this file is shadowed from gatsby-theme-localized
+#  learn more about shadowing here: https://www.gatsbyjs.org/docs/themes/shadowing/
+home.content: "Přeložená domovská stránka"
+header: "Koukej mami, lokalizovanej header!"
+subPage.content: "Přeložená podstránka 😲"
+
