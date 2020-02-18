@@ -2,7 +2,8 @@
     "name": "gatsby-theme-localized",
     "description": "A theme for websites with internationalized content and routes",
     "version": "0.0.1",
-    "author": "Marek Janča <marek-janca@volny.cz> | Filip Kubík <filip.kubik@ackee.cz>",
+    "author": "Filip Kubík <filip.kubik@ackee.cz>",
+    "contributors": ["Marek Janča <marek-janca@volny.cz>"],
     "dependencies": {
         "gatsby": "^2.1.24",
         "gatsby-plugin-manifest": "^2.0.22",
