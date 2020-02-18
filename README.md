@@ -19,8 +19,6 @@ Gatsby theme v1 based on [gatsby-starter-intl](https://github.com/tomekskuta/gat
 -   `LocalizedLink` - built-in link component handling route generation
 -   `LanguageSwitcher` - built-in language switcher component
 
-**The starter includes only code important for internationalization, the rest is up to you**
-
 ## How to start
 
 ## Gatsby-theme-localized
