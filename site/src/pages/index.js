@@ -3,7 +3,7 @@ import { compose } from "recompose";
 import Layout from "../components/Layout/Layout"
 
 
-import { injectIntl } from "react-intl";
+import { injectIntl, FormattedMessage } from "react-intl";
 import withPageContext from "gatsby-theme-localized/src/pageContext";
 
 
@@ -15,6 +15,9 @@ const IndexPage = ({ intl }) => {
   return (
     <Layout>
           <p style={content}>{intl.formatMessage({ id: "home.content" })}</p>
+          <FormattedMessage id='home.rich' values={{
+            a: child => <a href='https://google.com'>rich {child}</a>
+          }}/>
     </Layout>
   )
 }
