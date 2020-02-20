@@ -1,5 +1,3 @@
-import { addLocaleData } from "react-intl";
-import csData from "react-intl/locale-data/cs";
-import enData from "react-intl/locale-data/en";
-
-addLocaleData([...csData, ...enData]);
+if (!Intl.PluralRules) {
+    require('@formatjs/intl-pluralrules/polyfill');
+}
