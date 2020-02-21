@@ -8,7 +8,11 @@ const getLocalizedPath = (originalPath, locale, languages) => {
         );
     }
 
-    const keyPath = originalPath.replace(/(\w+)\/$/, "$1");
+    let  keyPath = originalPath.replace(/(\w+)\/$/, "$1");
+
+    // Detect 404
+    if (keyPath.match(/^\/?404\/?/gm)) keyPath = 'notFound';
+    
     const lang = languages.find(lang => lang.locale === locale);
 
     const isDefault = locale === defaultLanguage.locale;

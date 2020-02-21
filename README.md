@@ -169,6 +169,30 @@ const IndexPage = ({ intl }) => (
 export default withPageContext(IndexPage);
 ```
 
+## Localizing 404
+To localize your 404, you can use the `NotFoundPage.js` component. In your `404.js`
+
+This component ensures that the right locale is asigned to your 404. 
+
+```jsx
+// src/pages/404.js
+import React from 'react';
+
+import { withPageContext, NotFoundPage } from 'gatsby-theme-localized'
+
+import { FormattedMessage } from 'react-intl'
+
+
+export const CustomNotFound = ({ pageContext, location, setLocale }) => (
+    <NotFoundPage {...{ pageContext, location, setLocale } }>
+        <FormattedMessage id='404.title' />
+    </NotFoundPage>
+)
+ 
+
+export default withPageContext(CustomNotFound);
+```
+
 ## Contributing
 
 If you have any question, see bugs or you think some feature can be written better - just open pull request or issue. I will be happy to help and learn from you.

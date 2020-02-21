@@ -4,7 +4,7 @@ import Layout from "../../components/Layout/Layout"
 
 
 import { injectIntl } from "react-intl";
-import withPageContext from "gatsby-theme-localized/src/pageContext";
+import { withPageContext } from "gatsby-theme-localized";
 
 
 export const content = {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 
 import { IntlProvider } from "react-intl";
@@ -12,11 +12,12 @@ import { getDisplayName } from "../utils";
 
 const withPageContext = Component => {
     const WrapperComponent = props => {
-        const { locale } = props.pageContext;
+        const [locale, setLocale] = useState(props.pageContext.locale);
+
         return (
             <IntlProvider locale={locale} messages={translations[locale]}>
-                <PageContext.Provider value={props.pageContext}>
-                    <Component {...props} />
+                <PageContext.Provider value={{ ...props.pageContext }}>
+                    <Component {...props} setLocale={setLocale} />
                 </PageContext.Provider>
             </IntlProvider>
         );

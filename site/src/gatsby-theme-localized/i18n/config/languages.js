@@ -6,7 +6,8 @@ module.exports = [
             "/": "/",
             "/page1": "/stranka1",
             "/subpage/page1": "/podstranka/stranka1",
-            "/subpage/subsubpage/page1": "/podstranka/podpodstranka/stranka1"
+            "/subpage/subsubpage/page1": "/podstranka/podpodstranka/stranka1",
+            "notFound": '/404.html',
         }
     },
     {
@@ -16,7 +17,8 @@ module.exports = [
             "/": "/",
             "/page1": "/stranka1",
             "/subpage/page1": "/podstranka/stranka1",
-            "/subpage/subsubpage/page1": "/podstranka/podpodstranka/stranka1"
+            "/subpage/subsubpage/page1": "/podstranka/podpodstranka/stranka1",
+            "notFound": '/404.html',
         }
     },
     {
@@ -27,7 +29,8 @@ module.exports = [
             "/": "/",
             "/page1": "/page1",
             "/subpage/page1": "/subpage/page1",
-            "/subpage/subsubpage/page1": "/subpage/subsubpage/page1"
+            "/subpage/subsubpage/page1": "/subpage/subsubpage/page1",
+            "notFound": '/404.html',
         }
     }
 ];

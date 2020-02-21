@@ -2,5 +2,7 @@ home.content: "This is translated"
 header: "Look ma a localized header!"
 subPage.content: "Translated subpage 😲"
 home.rich: "This is a <a>link</a> to Google"
+404.title: "Page not found"
+
 
 
