@@ -10,13 +10,13 @@ const LanguageSwitcher = ({ render }) => {
         {({ originalPath, locale, languages }) => {
             return(
                 <div>
-                {languages.map(lang => {
-                    const isCurrent = lang.locale === locale;
-                    const path = getLocalizedPath(originalPath, lang.locale, languages)
+                    {languages.map(lang => {
+                        const isCurrent = lang.locale === locale;
+                        const path = getLocalizedPath(originalPath, lang.locale, languages)
 
-                    return render({lang, isCurrent, path})
-                })}
-             </div>
+                        return render({lang, isCurrent, path})
+                    })}
+                </div>
         )}}
     </PageContext.Consumer>
     );   
