@@ -30,8 +30,13 @@ All you have to do is to include it in your core **gatsby-config.js**
 ```javascript
 module.exports = {
   plugins: [
-    'gatsby-theme-localized',
-  ],
+      {
+        resolve: 'gatsby-theme-localized',
+        options: {
+          languages: require('./src/gatsby-theme-localized/i18n/config/languages'),
+        }
+      }
+    ]
 }
 ```
 
@@ -49,7 +54,22 @@ And your core workspace **package.json** file
 You can see example implementation in the **site** folder
 
 ## Site
-Site is the example of your core workspace, that could be extended by themes
+Site is the example of your core workspace, that could be extended by themes.
+
+Your site should also contain following directories and files.
+
+```bash
+|—— site
+|   |—— src
+|       |—— gatsby-theme-localized
+|           |—— i18n
+|               |—— config   
+|               |   |—— languages.js
+|               |   |—— reactIntl.js # is optional for overriding pollyfills etc
+|               |—— translations #contains all locale files
+|                   |—— en.yml 
+|                   |—— de.yml  
+```
 
 ## Running the project 
 `yarn workspace site`
@@ -80,13 +100,13 @@ names depend on your configuration.
 
 ### Translations
 
-Translations are set in [src/i18n/translations](src/i18n/translations). We use flat structure set in yaml files. There should be a yaml file for every language (`cs.yaml`, `en.yaml` etc.)
+Translations are set in [src/i18n/translations](site/src/gatsby-theme-localized/i18n/translations). We use flat structure set in yaml files. There should be a yaml file for every language (`cs.yaml`, `en.yaml` etc.)
 
 ```jsx
 <FormattedMessage id="home.title" />
 ```
 
-Translation is in `src/i18n/translations/en.yaml` and looks like:
+Translation is in `site/src/gatsby-theme-localized/i18n/translations/en.yaml` and looks like:
 
 ```yaml
 home.title: "Homepage"
@@ -94,7 +114,7 @@ home.title: "Homepage"
 
 ### Languages
 
-Language list is in [src/i18n/config/languages.js](src/i18n/config/languages.js). Elements of array have following attributes:
+Language list is in [site/src/gatsby-theme-localized/i18n/config/languages.js](site/src/gatsby-theme-localized/i18n/config/languages.js). Elements of array have following attributes:
 
 -   locale - a key to identify your locale,
 -   label - a locale name,
@@ -126,7 +146,7 @@ Example:
 ```
 
 ### React Intl locales
-Don't forget to add `react-intl` locales for your languages in [src/i18n/config/reactIntl.js](src/i18n/config/reactIntl.js).
+Don't forget to add `react-intl` locales for your languages in [site/src/gatsby-theme-localized/i18n/config/reactIntl.js](site/src/gatsby-theme-localized/i18n/config/reactIntl.js).
 
 ### PageContext
 `PageContext` includes `locale` and `originalPath` you can use in your pages. It is used by `LocalizedLink` to create correct link and by `LanguageSwitcher` to switch to correct language version of a page.
