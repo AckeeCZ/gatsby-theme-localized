@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import LanguageSwitcher from "gatsby-theme-localized/src/components/LanguageSwitcher/LanguageSwitcher"
+import { LanguageSwitcher as Switcher } from "gatsby-theme-localized"
 
 const customSwitcherElement = ({ lang, isCurrent, path }) => {
     return (
@@ -13,10 +13,10 @@ const customSwitcherElement = ({ lang, isCurrent, path }) => {
     )
 }
 
-const Switcher = () => {
+const LanguageSwitcher = () => {
     return (
-        <LanguageSwitcher render={customSwitcherElement} />
+        <Switcher render={customSwitcherElement} />
     )
 }
 
-export default Switcher;
+export default LanguageSwitcher;
