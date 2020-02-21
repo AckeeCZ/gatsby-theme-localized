@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import { LanguageSwitcher as Switcher } from "gatsby-theme-localized"
 
-const customSwitcherElement = ({ lang, isCurrent, path }) => {
+const renderCustomSwitcher = ({ lang, isCurrent, path }) => {
     return (
         !isCurrent ? 
             <Link key={lang.label} to={path}>
@@ -15,7 +15,7 @@ const customSwitcherElement = ({ lang, isCurrent, path }) => {
 
 const LanguageSwitcher = () => {
     return (
-        <Switcher render={customSwitcherElement} />
+        <Switcher render={renderCustomSwitcher} />
     )
 }
 
