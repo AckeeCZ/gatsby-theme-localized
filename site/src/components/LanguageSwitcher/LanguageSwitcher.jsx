@@ -1,33 +1,22 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { languages, getLocalizedPath } from "../../gatsby-theme-localized/i18n";
+import LanguageSwitcher from "gatsby-theme-localized/src/components/LanguageSwitcher/LanguageSwitcher"
 
-import { PageContext } from "gatsby-theme-localized/src/pageContext";
-
-const LanguageSwitcher = () => {
+const customSwitcherElement = ({ lang, isCurrent, path }) => {
     return (
-        <PageContext.Consumer>
-        {({ originalPath, locale }) => {
-            return(
-            <div>
+        !isCurrent ? 
+            <Link key={lang.label} to={path}>
+                <span className='active'>{lang.label}</span>
+            </Link>
+            : <span key={lang.label}>{lang.label}</span>
+    )
+}
 
-                {languages.map(lang =>
-                    lang.locale === locale ? (
-                        <span key={lang.locale}>{lang.label}</span>
-                    ) : (
-                        <Link
-                            key={lang.locale}
-                            to={getLocalizedPath(originalPath, lang.locale)}
-                        >
-                            <span>{lang.label}</span>
-                        </Link>
-                    )
-                )}
-            </div>
-        )}}
-    </PageContext.Consumer>
-    );   
-} 
+const Switcher = () => {
+    return (
+        <LanguageSwitcher render={customSwitcherElement} />
+    )
+}
 
-export default LanguageSwitcher;
+export default Switcher;
