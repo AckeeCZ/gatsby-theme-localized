@@ -4,7 +4,6 @@ import withPageContext from '../../pageContext'
 
 const NotFoundPage = ({ pageContext, location, setLocale, children }) => {
     // Change language of 404 based on user url address
-
     useLayoutEffect(() => {
         const defaultLanguage = () => pageContext.languages.find(lang => lang.default);
         const locales = pageContext.languages.map(item => item.locale)
@@ -28,4 +27,4 @@ const NotFoundPage = ({ pageContext, location, setLocale, children }) => {
    )
 };
 
-export default NotFoundPage;
+export default  withPageContext(NotFoundPage);

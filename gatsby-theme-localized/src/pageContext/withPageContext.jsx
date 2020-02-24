@@ -13,7 +13,6 @@ import { getDisplayName } from "../utils";
 const withPageContext = Component => {
     const WrapperComponent = props => {
         const [locale, setLocale] = useState(props.pageContext.locale);
-        
         return (
             <IntlProvider locale={locale} messages={translations[locale]}>
                 <PageContext.Provider value={{ ...props.pageContext }}>

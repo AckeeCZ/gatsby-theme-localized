@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NotFoundPage, withPageContext } from 'gatsby-theme-localized'
+import { NotFoundPage } from 'gatsby-theme-localized'
 
 import { FormattedMessage } from 'react-intl'
 
@@ -11,4 +11,4 @@ export const CustomNotFound = ({ pageContext, location, setLocale }) => (
 )
  
 
-export default  withPageContext(CustomNotFound);
+export default CustomNotFound;
