@@ -16,9 +16,9 @@ const NotFoundPage = ({ pageContext, location, setLocale, children }) => {
 
         if (localesInclude(languageInUrl)) {
             setLocale(languageInUrl)
-        } else (
-            setLocale(defaultLanguage.locale)
-        )
+        } else {
+            setLocale(defaultLanguage().locale)
+        }
     });
 
    return (
@@ -28,4 +28,4 @@ const NotFoundPage = ({ pageContext, location, setLocale, children }) => {
    )
 };
 
-export default withPageContext(NotFoundPage);
+export default NotFoundPage;
