@@ -178,19 +178,19 @@ This component ensures that the right locale is asigned to your 404.
 // src/pages/404.js
 import React from 'react';
 
-import { withPageContext, NotFoundPage } from 'gatsby-theme-localized'
+import { NotFoundPage } from 'gatsby-theme-localized'
 
 import { FormattedMessage } from 'react-intl'
 
-
-export const CustomNotFound = ({ pageContext, location, setLocale }) => (
-    <NotFoundPage {...{ pageContext, location, setLocale } }>
-        <FormattedMessage id='404.title' />
+export const CustomNotFound = ({ pageContext, location, setLocale }) => {
+    return (
+    <NotFoundPage {...{ pageContext, location, setLocale }}>
+        <FormattedMessage id='404.title'/>
     </NotFoundPage>
-)
+)}
  
 
-export default withPageContext(CustomNotFound);
+export default CustomNotFound;
 ```
 
 ## Contributing
