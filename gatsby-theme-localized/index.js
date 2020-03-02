@@ -1,6 +1,6 @@
 import LanguageSwitcher from  "./src/components/LanguageSwitcher"
-import withPageContext from './src/pageContext'
+import withPageContext, { PageContext } from './src/pageContext'
 import NotFoundPage from './src/components/NotFoundPage'
  
-export { LanguageSwitcher, withPageContext, NotFoundPage }
+export { LanguageSwitcher, withPageContext, NotFoundPage, PageContext }
 
