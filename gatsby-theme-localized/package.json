@@ -12,7 +12,7 @@
         "gatsby-plugin-manifest": "^2.0.22",
         "gatsby-plugin-offline": "^2.0.24",
         "gatsby-source-filesystem": "^2.0.23",
-        "jsdom": "^16.2.0",
+        "jsdom": "^16.5.0",
         "prop-types": "^15.7.2",
         "react": "^16.8.4",
         "react-dom": "^16.8.4",
